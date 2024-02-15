@@ -1,0 +1,126 @@
+﻿@page
+@model HRMSApplication.Pages.Admin.Employees.NewModel
+@{
+}
+
+<h2 class="my-3">New Employeee</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+        <strong>@Model.errorMessage</strong>
+        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>
+}
+else if (Model.successMessage.Length > 0)
+{
+    <div class='alert alert-success alert-dismissible fade show' role='alert'>
+        <strong>@Model.successMessage</strong>
+        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>
+}
+
+<form method="POST" enctype="multipart/form-data">
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Employee ID</label>
+        <div class="col-sm-6">
+
+            <select class="form-select" asp-for="EmployeeID">
+                @foreach (var item in Model.listEmployees)
+                {
+                    <option value='@item.EmployeeID	'>@item.EmployeeID	</option>
+                }
+            </select>
+
+            <span asp-validation-for="EmployeeID" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Surname</label>
+        <div class="col-sm-6">
+
+            <select class="form-select" asp-for="Surname">
+                @foreach (var item in Model.listEmployees)
+                {
+                    <option value='@item.Surname	'>@item.Surname	</option>
+                }
+            </select>
+
+            <span asp-validation-for="Surname" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">OtherName</label>
+        <div class="col-sm-6">
+
+            <select class="form-select" asp-for="OtherNames">
+                @foreach (var item in Model.listEmployees)
+                {
+                    <option value='@item.OtherNames	'>@item.OtherNames	</option>
+                }
+            </select>
+
+            <span asp-validation-for="OtherNames" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Basic</label>
+        <div class="col-sm-6">
+            <input class="form-control" asp-for="Basic" />
+            <span asp-validation-for="Basic" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Housing</label>
+        <div class="col-sm-6">
+            <input class="form-control" asp-for="Housing" />
+            <span asp-validation-for="Housing" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Transport</label>
+        <div class="col-sm-6">
+            <input class="form-control" asp-for="Transport" />
+            <span asp-validation-for="Transport" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Step</label>
+        <div class="col-sm-6">
+
+            <select class="form-select" asp-for="Step">
+                @foreach (var item in Model.listSteps)
+                {
+                    <option value='@item.Name	'>@item.Name	</option>
+                }
+            </select>
+
+            <span asp-validation-for="Step" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Grade</label>
+        <div class="col-sm-6">
+
+            <select class="form-select" asp-for="Grade">
+                @foreach (var item in Model.listGrades)
+                {
+                    <option value='@item.GradeName	'>@item.GradeName	</option>
+                }
+            </select>
+
+            <span asp-validation-for="Grade" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href=/Admin/Employees/New role="button">Cancel</a>
+        </div>
+    </div>
+</form>

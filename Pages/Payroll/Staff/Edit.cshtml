@@ -1,0 +1,78 @@
+﻿@page
+@model HRMSApplication.Pages.Payroll.Staff.EditModel
+@{
+}
+
+
+<h2 class="my-3">New Employee Payroll Details</h2>
+
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+        <strong>@Model.errorMessage</strong>
+        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>
+}
+else if (Model.successMessage.Length > 0)
+{
+    <div class='alert alert-success alert-dismissible fade show' role='alert'>
+        <strong>@Model.successMessage</strong>
+        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>
+}
+
+<form method="POST" enctype="multipart/form-data">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Employee Id</label>
+        <div class="col-sm-6">
+            <input readonly type="text" class="form-control-plaintext" asp-for="EmployeeID">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Surname</label>
+        <div class="col-sm-6">
+            <input readonly type="text" class="form-control-plaintext" asp-for="Surname">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Other Name</label>
+        <div class="col-sm-6">
+            <input readonly type="text" class="form-control-plaintext" asp-for="OtherNames">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Salary</label>
+        <div class="col-sm-6">
+            <input readonly type="text" class="form-control-plaintext" asp-for="Basic">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Housing</label>
+        <div class="col-sm-6">
+            <input readonly type="text" class="form-control-plaintext" asp-for="Housing">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Transport</label>
+        <div class="col-sm-6">
+            <input readonly type="text" class="form-control-plaintext" asp-for="Transport">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Step</label>
+        <div class="col-sm-6">
+            <input readonly type="text" class="form-control-plaintext" asp-for="Step">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Grade</label>
+        <div class="col-sm-6">
+            <input readonly type="text" class="form-control-plaintext" asp-for="Grade">
+        </div>
+    </div>
+
+   
+
+</form>

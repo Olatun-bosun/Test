@@ -1,0 +1,46 @@
+﻿@page
+@model HRMSApplication.Setup.Gralls.IndexModel
+@{
+}
+
+<h2 class="my-3">PaySheet Allowance</h2>
+<div class="col">
+	<a class='btn btn-primary' href='/Setup/Gralls/Create'>New Allowance</a>
+</div>
+
+
+
+<table class="table">
+	<thead>
+		<tr>
+@*			<th>ID</th>
+*@			<th>Name</th>
+			<th>Amount</th>
+			<th>Steps</th>
+			<th>Grade</th>
+
+			
+			
+
+		</tr>
+	</thead>
+	 @foreach(var item in Model.listGralls)
+        {
+		<tbody>
+			<tr>
+@*				<td>@item.HID            </td>
+*@				<td>@item.AllowName				  </td>
+				<td>@item.Value1					  </td>
+				<td>@item.Steps					  </td>
+				<td>@item.Grade					  </td>
+
+
+				
+				<td style="white-space:nowrap">
+					
+					<a class="btn btn-danger btn-sm" href="/Setup/Gralls/Delete?HID=@item.HID">Delete</a>
+				</td>
+			</tr>
+			</tbody>
+			}
+</table>

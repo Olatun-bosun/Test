@@ -1,0 +1,36 @@
+﻿@page
+@model HRMSApplication.Pages.Setup.Departments.Index1Model
+@{
+}
+
+
+<h2 class="my-3">Departments</h2>
+<div class="col">
+	<a class='btn btn-primary' href='/Setup/Departments/Create'>New Department</a>
+</div>
+
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Code</th>
+			<th>Name</th>
+			
+		</tr>
+	</thead>
+	@foreach (var item in Model.listDepartments)
+	{
+		<tbody>
+			<tr>
+				<td>@item.Code              </td>
+				<td>@item.Name 				  </td>
+				
+				<td style="white-space:nowrap">
+
+					<a class="btn btn-danger btn-sm" href="/Setup/Departments/Delete?Code=@item.Code">Delete</a>
+				</td>
+			</tr>
+		</tbody>
+	}
+</table>

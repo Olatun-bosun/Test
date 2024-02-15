@@ -1,0 +1,37 @@
+﻿@page
+@model HRMSApplication.Setup.Maindeds.IndexModel
+@{
+}
+
+<h2 class="my-3">Staff Deduction</h2>
+<div class="col">
+	<a class='btn btn-primary' href='/Setup/maindeds/Create'>New Deduction</a>
+</div>
+
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			
+			
+
+		</tr>
+	</thead>
+	 @foreach(var item in Model.listMaindeds)
+        {
+		<tbody>
+			<tr>
+				<td>@item.DedID            </td>
+				<td>@item.DedName		  </td>
+				
+				<td style="white-space:nowrap">
+					
+					<a class="btn btn-danger btn-sm" href="/Setup/MainDeds/Delete?DedID=@item.DedID">Delete</a>
+				</td>
+			</tr>
+			</tbody>
+			}
+</table>

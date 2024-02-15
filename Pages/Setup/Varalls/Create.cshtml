@@ -1,0 +1,71 @@
+﻿@page
+@model HRMSApplication.Pages.Setup.Varalls.CreateModel
+@{
+}
+
+<h2 class="my-3">New Variance Allowance</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+        <strong>@Model.errorMessage</strong>
+        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>
+}
+else if (Model.successMessage.Length > 0)
+{
+    <div class='alert alert-success alert-dismissible fade show' role='alert'>
+        <strong>@Model.successMessage</strong>
+        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>
+}
+
+<form method="POST" enctype="multipart/form-data">
+    
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Name</label>
+        <div class="col-sm-6">
+            <input class="form-control" asp-for="AllowName" />
+            <span asp-validation-for="AllowName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Amount</label>
+        <div class="col-sm-6">
+            <input class="form-control" asp-for="Value1" />
+            <span asp-validation-for="Value1" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Description</label>
+        <div class="col-sm-6">
+            <input class="form-control" asp-for="Descrption" />
+            <span asp-validation-for="Descrption" class="text-danger"></span>
+        </div>
+    </div>
+    
+        @*<div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Description</label>
+            <div class="col-sm-6">
+           
+                <select class="form-select" asp-for="Descrption">
+                @foreach (var item in Model.listVaralls)
+                {
+                    <option value='@item.AllowName	'>@item.AllowName	</option>
+                }
+                </select>
+            
+                <span asp-validation-for="Descrption" class="text-danger"></span>
+            </div>
+        </div>*@
+  
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/Setup/Varalls/Index" role="button">Cancel</a>
+        </div>
+    </div>
+</form>

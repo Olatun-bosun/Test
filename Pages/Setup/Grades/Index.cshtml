@@ -1,0 +1,37 @@
+﻿@page
+@model HRMSApplication.Setup.Grades.IndexModel
+@{
+}
+
+<h2 class="my-3">Grade</h2>
+<div class="col">
+	<a class='btn btn-primary' href='/Setup/Grades/Create'>New Grade</a>
+</div>
+
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			
+			
+
+		</tr>
+	</thead>
+	 @foreach(var item in Model.listGrades)
+        {
+		<tbody>
+			<tr>
+				<td>@item.ID            </td>
+				<td>@item.GradeName		  </td>
+				
+				<td style="white-space:nowrap">
+					
+					<a class="btn btn-danger btn-sm" href="/Setup/Grades/Delete?ID=@item.ID">Delete</a>
+				</td>
+			</tr>
+			</tbody>
+			}
+</table>

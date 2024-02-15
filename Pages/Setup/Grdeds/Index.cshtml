@@ -1,0 +1,46 @@
+﻿@page
+@model HRMSApplication.Setup.Grdeds.IndexModel
+@{
+}
+
+<h2 class="my-3">PaySheet Deduction</h2>
+<div class="col">
+	<a class='btn btn-primary' href='/Setup/Grdeds/Create'>New Deduction</a>
+</div>
+
+
+
+<table class="table">
+	<thead>
+		<tr>
+@*			<th>ID</th>
+*@			<th>Name</th>
+			<th>Amount</th>
+			<th>Steps</th>
+			<th>Grade</th>
+
+			
+			
+
+		</tr>
+	</thead>
+	 @foreach(var item in Model.listGrdeds)
+        {
+		<tbody>
+			<tr>
+@*				<td>@item.HID            </td>
+*@				<td>@item.DedName				  </td>
+				<td>@item.Value1					  </td>
+				<td>@item.Steps					  </td>
+				<td>@item.Grade					  </td>
+
+
+				
+				<td style="white-space:nowrap">
+					
+					<a class="btn btn-danger btn-sm" href="/Setup/Grdeds/Delete?HID=@item.HID">Delete</a>
+				</td>
+			</tr>
+			</tbody>
+			}
+</table>

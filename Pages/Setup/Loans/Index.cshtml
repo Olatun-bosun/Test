@@ -1,0 +1,41 @@
+﻿@page
+@model HRMSApplication.Setup.Loans.IndexModel
+@{
+}
+
+<h2 class="my-3">Loan Type</h2>
+<div class="col">
+	<a class='btn btn-primary' href='/Setup/Loans/Create'>New Loan</a>
+</div>
+
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Rate</th>
+
+			
+			
+
+		</tr>
+	</thead>
+	 @foreach(var item in Model.listLoans)
+        {
+		<tbody>
+			<tr>
+				<td>@item.TypeID            </td>
+				<td>@item.LoanType		  </td>
+				<td>@item.LoanRate		  </td>
+
+				
+				<td style="white-space:nowrap">
+					
+					<a class="btn btn-danger btn-sm" href="/Setup/Loans/Delete?TypeID=@item.TypeID">Delete</a>
+				</td>
+			</tr>
+			</tbody>
+			}
+</table>

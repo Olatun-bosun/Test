@@ -1,0 +1,85 @@
+﻿@page
+@model HRMSApplication.Pages.Setup.Index1Model
+@{
+}
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Setup/Overview">Overview</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Employees
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-page="/Setup/Departments/Index1">Departments</a></li>
+                            <li><a class="dropdown-item" asp-page="/Setup/Units/Index">Sections/Units</a></li>
+                            <li><a class="dropdown-item" asp-page="/Setup/Grades/Index">Grade level</a></li>
+                            <li><a class="dropdown-item" asp-page="/Setup/Steps/Index">Grade Steps</a></li>
+                            <li><a class="dropdown-item" asp-page="/Setup/Cadres/Index">Trainimg Cadres</a></li>
+                            <li><hr class="dropdown-divider"></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Payroll
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-page="/Setup/Sheets/Index">Pay Sheets</a></li>
+                            <li><hr class="dropdown-divider"></li>
+
+                            <li><a class="dropdown-item" asp-page="/Setup/Gralls/Index">Grade Level Allowance</a></li>
+                            <li><a class="dropdown-item" asp-page="/Setup/Grdeds/Index">Grade Level Dedution</a></li>
+                            <li><hr class="dropdown-divider"></li>
+
+                            <li><a class="dropdown-item" asp-page="/Setup/Varalls/Index">Monthly Variance Allowance</a></li>
+                            <li><a class="dropdown-item" asp-page="/Setup/Vardeds/Index">Monthly Variance Dedution</a></li>
+                            <li><a class="dropdown-item" asp-page="/Setup/Mainalls/Index">Staff Allowances</a></li>
+                            <li><a class="dropdown-item" asp-page="/Setup/Maindeds/Index">Staff Dedution</a></li>
+                            <li><a class="dropdown-item" asp-page="/Setup/Loans/Index">Loan Type</a></li>
+
+                            <li><hr class="dropdown-divider"></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Security
+                        </a>
+                        <ul class="dropdown-menu">
+
+                            <li><hr class="dropdown-divider"></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Company
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" asp-page="/Setup/Departments/Index1">Departments</a></li>
+                            <li><a class="dropdown-item" asp-page="/Setup/Units/Index">Sections/Units</a></li>
+                            <li><a class="dropdown-item" href="#">Grade level</a></li>
+                            <li><a class="dropdown-item" href="#">Grade Steps</a></li>
+                            <li><a class="dropdown-item" href="#">Trainimg Cadres</a></li>
+                            <li><hr class="dropdown-divider"></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>

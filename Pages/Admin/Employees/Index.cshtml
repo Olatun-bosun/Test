@@ -1,0 +1,41 @@
+﻿@page
+@model HRMSApplication.Admin.Employees.IndexModel
+@{
+}
+
+<h2 class="my-3">Employees</h2>
+<div class="col">
+	<a class='btn btn-primary' href='/Admin/Employees/Create'>New Employee</a>
+</div>
+
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>EmployeeID</th>
+			<th>StaffIDNo </th>
+			<th>Title </th>
+			<th>Surname </th>
+			<th>OtherNames</th>
+			
+
+		</tr>
+	</thead>
+	 @foreach(var item in Model.listEmployees)
+        {
+		<tbody>
+			<tr>
+				<td>@item.EmployeeID               </td>
+				<td>@item.StaffIDNo 				  </td>
+				<td>@item.Title 					  </td>
+				<td>@item.Surname 				  </td>
+				<td>@item.OtherNames				  </td>
+				<td style="white-space:nowrap">
+					
+					<a class="btn btn-danger btn-sm" href="/Admin/Employees/Delete?EmployeeID=@item.EmployeeID">Delete</a>
+				</td>
+			</tr>
+			</tbody>
+			}
+</table>

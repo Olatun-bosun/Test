@@ -1,0 +1,39 @@
+﻿@page
+@model HRMSApplication.Setup.Steps.IndexModel
+@{
+}
+
+<h2 class="my-3">Steps</h2>
+<div class="col">
+	<a class='btn btn-primary' href='/Setup/Steps/Create'>New Step</a>
+</div>
+
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name </th>
+			<th>Remarks </th>
+			
+			
+
+		</tr>
+	</thead>
+	 @foreach(var item in Model.listSteps)
+        {
+		<tbody>
+			<tr>
+				<td>@item.ID               </td>
+				<td>@item.Name				  </td>
+				<td>@item.Remarks					  </td>
+				
+				<td style="white-space:nowrap">
+					
+					<a class="btn btn-danger btn-sm" href="/Setup/Steps/Delete?ID=@item.ID">Delete</a>
+				</td>
+			</tr>
+			</tbody>
+			}
+</table>

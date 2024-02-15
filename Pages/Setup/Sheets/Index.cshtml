@@ -1,0 +1,39 @@
+﻿@page
+@model HRMSApplication.Setup.Sheets.IndexModel
+@{
+}
+
+<h2 class="my-3">Pay Sheet</h2>
+<div class="col">
+	<a class='btn btn-primary' href='/Setup/Sheets/Create'>New Pay Sheets</a>
+</div>
+
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>SheetID</th>
+			<th>PaySheet</th>
+			<th>Frequency</th>
+			
+			
+
+		</tr>
+	</thead>
+	 @foreach(var item in Model.listSheets)
+        {
+		<tbody>
+			<tr>
+				<td>@item.SheetID             </td>
+				<td>@item.PaySheet				  </td>
+				<td>@item.Frequency					  </td>
+				
+				<td style="white-space:nowrap">
+					
+					<a class="btn btn-danger btn-sm" href="/Setup/Sheets/Delete?SheetID=@item.SheetID">Delete</a>
+				</td>
+			</tr>
+			</tbody>
+			}
+</table>

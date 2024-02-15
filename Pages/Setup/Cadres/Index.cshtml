@@ -1,0 +1,39 @@
+﻿@page
+@model HRMSApplication.Setup.Cadres.IndexModel
+@{
+}
+
+<h2 class="my-3">Trainging Cadres</h2>
+<div class="col">
+	<a class='btn btn-primary' href='/Setup/Cadres/Create'>New Trainging Cadres</a>
+</div>
+
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name </th>
+			<th>Remarks </th>
+			
+			
+
+		</tr>
+	</thead>
+	 @foreach(var item in Model.listCadres)
+        {
+		<tbody>
+			<tr>
+				<td>@item.Code               </td>
+				<td>@item.Name				  </td>
+				<td>@item.Remarks					  </td>
+				
+				<td style="white-space:nowrap">
+					
+					<a class="btn btn-danger btn-sm" href="/Setup/Cadres/Delete?Code=@item.Code">Delete</a>
+				</td>
+			</tr>
+			</tbody>
+			}
+</table>

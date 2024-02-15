@@ -1,0 +1,39 @@
+﻿@page
+@model HRMSApplication.Setup.Vardeds.IndexModel
+@{
+}
+
+<h2 class="my-3">Variance Deduction</h2>
+<div class="col">
+	<a class='btn btn-primary' href='/Setup/Vardeds/Create'>New Deduction</a>
+</div>
+
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>DedID</th>
+			<th>Name</th>
+			<th>Amount</th>
+
+
+
+		</tr>
+	</thead>
+	@foreach (var item in Model.listVardeds)
+	{
+		<tbody>
+			<tr>
+				<td>@item.DedID            </td>
+				<td>@item.DedName				  </td>
+				<td>@item.Value2					  </td>
+
+				<td style="white-space:nowrap">
+
+					<a class="btn btn-danger btn-sm" href="/Setup/Vardeds/Delete?DedID=@item.DedID">Delete</a>
+				</td>
+			</tr>
+		</tbody>
+	}
+</table>

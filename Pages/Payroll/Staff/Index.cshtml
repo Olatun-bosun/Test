@@ -1,0 +1,42 @@
+﻿@page
+@model HRMSApplication.Pages.Payroll.Staff.IndexModel
+@{
+}
+<h2 class="my-3">New Staff Payroll</h2>
+@*<div class="col">
+	<a class='btn btn-primary' href='/Setup/Departments/Create'>New Department</a>
+</div>*@
+
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Employee ID</th>
+			<th>Surname</th>
+			<th>Other Name</th>
+			<th>Grade Level</th>
+
+
+		</tr>
+	</thead>
+	@foreach (var item in Model.listStaffs)
+	{
+		<tbody>
+			<tr>
+				<td><a @*class="btn btn-primary btn-sm"*@ href="/Payroll/Staff/Edit?ID=@item.ID">@item.EmployeeID </a>        </td>
+				<td>@item.Surname 				  </td>
+				<td>@item.OtherNames 				  </td>
+				<td>@item.Grade				  </td>
+
+
+
+				@*<td style="white-space:nowrap">
+					<a class="btn btn-primary btn-sm" href="/Payroll/Staff/Edit?ID=@item.ID">Edit</a>
+
+					<a class="btn btn-danger btn-sm" href="/Setup/Departments/Delete?Code=@item.Code">Delete</a>
+				</td>*@
+			</tr>
+		</tbody>
+	}
+</table>

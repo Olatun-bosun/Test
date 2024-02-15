@@ -1,0 +1,32 @@
+﻿@page
+@using System.Data.SqlClient
+@{
+	string Code = Request.Query["Code"];
+
+
+ try
+    {
+        string connectionString = " Data Source = INTTECK7\\SQL_2012; Initial Catalog = HRMS2DB; User ID = sa; Password = Gibs@321.";
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string sql = "DELETE FROM TrainingCadres WHERE Code=@Code";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@Code", Code);
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex.Message);
+    }
+
+    Response.Redirect("/Setup/Cadres/Index");
+}
+
+
+}
+

@@ -1,0 +1,45 @@
+﻿@page
+@model HRMSApplication.Setup.Users.IndexModel
+@{
+}
+
+<h2 class="my-3">Users</h2>
+<div class="col">
+	<a class='btn btn-primary' asp-page="/Auth/Register">New User</a>
+</div>
+
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>FirstName</th>
+				<th>LastName</th>
+				<th>Email</th>
+				<th>Phone</th>
+
+			
+			
+
+		</tr>
+	</thead>
+	 @foreach(var item in Model.listUsers)
+        {
+		<tbody>
+			<tr>
+				<td>@item.id           </td>
+				<td>@item.firstname		  </td>
+					<td>@item.lastname		  </td>
+					<td>@item.email		  </td>
+					<td>@item.phone		  </td>
+
+				
+				<td style="white-space:nowrap">
+					
+					<a class="btn btn-danger btn-sm" href="/Setup/Users/Delete?id=@item.id">Delete</a>
+				</td>
+			</tr>
+			</tbody>
+			}
+</table>

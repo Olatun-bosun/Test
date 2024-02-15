@@ -1,0 +1,51 @@
+﻿@page
+@using System.Data.SqlClient
+@*@using HRMSApplication.MyHelpers
+*@@*@attribute[RequireAuth(RequiredRole ="admin")]
+*@
+@{
+	string ID = Request.Query["ID"];
+
+
+ try
+    {
+        string connectionString = " Data Source = INTTECK7\\SQL_2012; Initial Catalog = HRMS2DB; User ID = sa; Password = Gibs@321.";
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+
+            //// delete the book image from /images/books/
+            //string sqlSelect = "SELECT image_filename FROM books WHERE id=@id";
+            //using (SqlCommand command = new SqlCommand(sqlSelect, connection))
+            //{
+            //    command.Parameters.AddWithValue("@id", id);
+            //    using (SqlDataReader reader = command.ExecuteReader())
+            //    {
+            //        if (reader.Read())
+            //        {
+            //            string imageFileName = reader.GetString(0);
+            //            string imageFolder = webHostEnvironment.WebRootPath + "/images/books/";
+            //            string imageFullPath = System.IO.Path.Combine(imageFolder, imageFileName);
+            //            System.IO.File.Delete(imageFullPath);
+            //            Console.WriteLine("Delete Image " + imageFullPath);
+            //        }
+            //    }
+            //}
+
+            // delete the book from the database
+            string sql = "DELETE FROM HPayGrade WHERE ID=@ID";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@ID", ID);
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex.Message);
+    }
+
+    Response.Redirect("/Setup/Grades/Index");
+}
